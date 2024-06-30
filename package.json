@@ -10,6 +10,7 @@
 		"preview": "vite preview",
 		"build": "tsc && vite build",
 		"test:unit": "vitest",
+		"test:unit:ci": "vitest run",
 		"test:integration": "cypress run --component --headless"
 	},
 	"keywords": [],
