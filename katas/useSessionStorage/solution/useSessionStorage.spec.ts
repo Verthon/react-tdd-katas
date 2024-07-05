@@ -1,7 +1,8 @@
 import { describe, it, expect } from "vitest";
 
+import { renderHook, act, waitFor } from "@testing-library/react";
+
 import { useSessionStorage } from "./useSessionStorage";
-import { renderHook } from "@testing-library/react";
 
 describe("useSessionStorage", () => {
 	it("should require a key parameter", () => {
@@ -24,5 +25,35 @@ describe("useSessionStorage", () => {
 		);
 
 		expect(result.current.value).toBe("initialValue");
+	});
+
+	it("should set a new value for given key", async () => {
+		const { result } = renderHook(() =>
+			useSessionStorage({ key: "test-set-value" })
+		);
+
+		act(() => {
+			result.current.setValue(123);
+		});
+
+		expect(result.current.value).toEqual(123);
+	});
+
+	it("should clear a value for given key", () => {
+		const { result } = renderHook(() =>
+			useSessionStorage({ key: "test-clear-value" })
+		);
+
+		act(() => {
+			result.current.setValue('test');
+		});
+
+		expect(result.current.value).toEqual('test');
+
+		act(() => {
+			result.current.clearValue();
+		});
+
+		expect(result.current.value).toBe(undefined);
 	});
 });

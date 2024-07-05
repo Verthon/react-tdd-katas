@@ -1,3 +1,7 @@
 export const App = () => {
-	return <p>test</p>;
+	return (
+		<div>
+			<p>you can treat it as runtime playground</p>
+		</div>
+	);
 };
