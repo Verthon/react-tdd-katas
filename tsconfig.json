@@ -3,7 +3,7 @@
 		/* Base Options: */
 		"esModuleInterop": true,
 		"skipLibCheck": true,
-		"target": "es2022",
+		"target": "es2015",
 		"allowJs": true,
 		"resolveJsonModule": true,
 		"moduleDetection": "force",
@@ -17,10 +17,12 @@
 		"noImplicitOverride": true,
 
 		/* If NOT transpiling with TypeScript: */
-		"module": "preserve",
+		"module": "Preserve",
 		"noEmit": true,
 
 		/* If your code runs in the DOM: */
 		"lib": ["es2022", "dom", "dom.iterable"],
+
+		"types": ["cypress"]
 	}
 }
