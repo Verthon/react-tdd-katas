@@ -22,7 +22,7 @@ describe("Show", () => {
 		cy.get("strong").should("contain", "Children is visible");
 	});
 
-	it("should NOT render children if 'when' is truthy", () => {
+	it("should NOT render children if 'when' is falsy", () => {
 		cy.mount(
 			<Show when={false}>
 				<button>Children is not visible</button>
@@ -30,5 +30,15 @@ describe("Show", () => {
 		);
 
 		cy.contains("Children is not visible").should("not.exist");
+	});
+
+	it("should render fallback not children if 'when' is falsy and fallback is provided", () => {
+		cy.mount(
+			<Show when={false} fallback={<cite>fallback</cite>}>
+				<button>Children is not visible</button>
+			</Show>
+		);
+
+		cy.get("cite").should("contain", "fallback");
 	});
 });
