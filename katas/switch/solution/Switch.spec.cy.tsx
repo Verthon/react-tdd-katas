@@ -7,7 +7,7 @@ describe("Switch and match", () => {
 				<Match when={true}>
 					<p>test</p>
 				</Match>
-			</Switch>
+			</Switch>,
 		);
 
 		cy.get("p").should("contain", "test");
@@ -22,7 +22,7 @@ describe("Switch and match", () => {
 				<Match when={false}>
 					<strong>I'm not visible</strong>
 				</Match>
-			</Switch>
+			</Switch>,
 		);
 
 		cy.get("p").should("contain", "I'm visible");
@@ -41,10 +41,13 @@ describe("Switch and match", () => {
 				<Match when={false}>
 					<strong>I'm not visible</strong>
 				</Match>
-			</Switch>
+			</Switch>,
 		);
 
-		cy.get("p").should("contain", "I'm visible because I'm first with the [when] equal to true");
+		cy.get("p").should(
+			"contain",
+			"I'm visible because I'm first with the [when] equal to true",
+		);
 		cy.contains("I'm not visible even the when is truthy").should("not.exist");
 	});
 });

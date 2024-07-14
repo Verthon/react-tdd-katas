@@ -41,7 +41,7 @@ describe("useState", () => {
 
 	it("should change the state with setter for object value", async () => {
 		const { result } = renderHook(() =>
-			useState<{ complex: { type: string; value: number } }>()
+			useState<{ complex: { type: string; value: number } }>(),
 		);
 		const [_state, setState] = result.current;
 

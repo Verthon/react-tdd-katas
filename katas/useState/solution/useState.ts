@@ -10,13 +10,13 @@ const isFunction = (x: unknown): x is Function => typeof x === "function";
 type Initializer<State> = State | (() => State);
 
 const createInitialState = <State = undefined>(
-	initialState: Initializer<State>
+	initialState: Initializer<State>,
 ): State => {
 	return isFunction(initialState) ? initialState() : initialState;
 };
 
 export const useState = <State = undefined>(
-	initialStateInput?: Initializer<State>
+	initialStateInput?: Initializer<State>,
 ) => {
 	const initialState = createInitialState(initialStateInput) as State;
 	const reducer = (state: State, action: Action<State>) => {

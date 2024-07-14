@@ -21,7 +21,7 @@ describe("useToggle", () => {
 	it("should flip the status", () => {
 		const { result } = renderHook(() => useToggle("on"));
 
-    expect(result.current.status).toBe('on')
+		expect(result.current.status).toBe("on");
 
 		act(() => {
 			result.current.toggle();
@@ -30,22 +30,22 @@ describe("useToggle", () => {
 		expect(result.current.status).toBe("off");
 	});
 
-  it("should toggle the status back and forth", () => {
-    const { result } = renderHook(() => useToggle());
+	it("should toggle the status back and forth", () => {
+		const { result } = renderHook(() => useToggle());
 
-    act(() => {
-      result.current.toggle();
-    });
-    expect(result.current.status).toBe("on");
+		act(() => {
+			result.current.toggle();
+		});
+		expect(result.current.status).toBe("on");
 
-    act(() => {
-      result.current.toggle();
-    });
-    expect(result.current.status).toBe("off");
+		act(() => {
+			result.current.toggle();
+		});
+		expect(result.current.status).toBe("off");
 
-    act(() => {
-      result.current.toggle();
-    });
-    expect(result.current.status).toBe("on");
-  });
+		act(() => {
+			result.current.toggle();
+		});
+		expect(result.current.status).toBe("on");
+	});
 });

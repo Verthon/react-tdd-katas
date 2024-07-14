@@ -11,12 +11,15 @@
 		"test:unit": "vitest",
 		"test:unit:ci": "vitest run",
 		"test:integration": "cypress run --component",
-		"test:integration:ui": "cypress open --component"
+		"test:integration:ui": "cypress open --component",
+		"lint": "biome check",
+		"lint:fix": "biome format --write"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
 		"@testing-library/react": "16.0.0",
 		"@types/react": "18.3.3",
 		"@types/react-dom": "18.3.0",

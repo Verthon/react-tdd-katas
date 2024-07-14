@@ -44,7 +44,7 @@ const switchReducer = (state: State, action: Action) => {
 				? true
 				: state.some((match) => {
 						return match.id === action.payload.id && action.payload.whenValue;
-				  });
+					});
 
 		const matchMeta = {
 			id: action.payload.id,
@@ -87,7 +87,7 @@ export const Match = ({ children, when }: MatchProps) => {
 			type: "match_registered",
 			payload: { id: id.current, whenValue: when },
 		});
-	}, []);
+	}, [when, dispatch]);
 
 	console.log("state", state);
 

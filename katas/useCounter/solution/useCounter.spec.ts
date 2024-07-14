@@ -56,7 +56,7 @@ describe("useCounter", () => {
 
 	it("should not increase the count above max value", () => {
 		const { result } = renderHook(() =>
-			useCounter({ initialCount: 3, max: 4 })
+			useCounter({ initialCount: 3, max: 4 }),
 		);
 
 		act(() => {
@@ -69,7 +69,7 @@ describe("useCounter", () => {
 
 	it("should not decrease the count above min value", () => {
 		const { result } = renderHook(() =>
-			useCounter({ initialCount: -9, min: -10 })
+			useCounter({ initialCount: -9, min: -10 }),
 		);
 
 		act(() => {

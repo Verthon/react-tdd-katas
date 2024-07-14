@@ -13,7 +13,7 @@ describe("useSessionStorage", () => {
 
 	it("should return a current value of given sessionStorage key", () => {
 		const { result } = renderHook(() =>
-			useSessionStorage({ key: "anotherKey" })
+			useSessionStorage({ key: "anotherKey" }),
 		);
 
 		expect(result.current.value).toBe(undefined);
@@ -21,7 +21,7 @@ describe("useSessionStorage", () => {
 
 	it("should return a initial vaule of given sessionStorage key", () => {
 		const { result } = renderHook(() =>
-			useSessionStorage({ key: "initExample", initialValue: "initialValue" })
+			useSessionStorage({ key: "initExample", initialValue: "initialValue" }),
 		);
 
 		expect(result.current.value).toBe("initialValue");
@@ -29,7 +29,7 @@ describe("useSessionStorage", () => {
 
 	it("should set a new value for given key", async () => {
 		const { result } = renderHook(() =>
-			useSessionStorage({ key: "test-set-value" })
+			useSessionStorage({ key: "test-set-value" }),
 		);
 
 		act(() => {
@@ -41,14 +41,14 @@ describe("useSessionStorage", () => {
 
 	it("should clear a value for given key", () => {
 		const { result } = renderHook(() =>
-			useSessionStorage({ key: "test-clear-value" })
+			useSessionStorage({ key: "test-clear-value" }),
 		);
 
 		act(() => {
-			result.current.setValue('test');
+			result.current.setValue("test");
 		});
 
-		expect(result.current.value).toEqual('test');
+		expect(result.current.value).toEqual("test");
 
 		act(() => {
 			result.current.clearValue();

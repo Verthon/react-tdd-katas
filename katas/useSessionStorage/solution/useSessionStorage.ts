@@ -65,6 +65,6 @@ export const useSessionStorage = <Value>({
 	return {
 		value: value ?? initialValue,
 		setValue,
-		clearValue
+		clearValue,
 	};
 };

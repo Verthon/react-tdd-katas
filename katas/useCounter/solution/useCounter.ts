@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 
 type UseCounterParams = {
 	initialCount?: number;
@@ -29,8 +29,8 @@ const reducer = (count: number, action: Action) => {
 
 export const useCounter = ({
 	initialCount = 0,
-	min = -Infinity,
-	max = Infinity,
+	min = -Number.NEGATIVE_INFINITY,
+	max = Number.POSITIVE_INFINITY,
 }: UseCounterParams) => {
 	const [count, dispatch] = useReducer(reducer, initialCount);
 

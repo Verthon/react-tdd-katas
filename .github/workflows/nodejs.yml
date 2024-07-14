@@ -24,6 +24,8 @@ jobs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
+    - name: Run linter
+      run: pnpm run lint
     - name: Run unit tests
       run: pnpm run test:unit:ci
     - name: Run integration tests
