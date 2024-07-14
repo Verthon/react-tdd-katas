@@ -29,7 +29,7 @@ const reducer = (count: number, action: Action) => {
 
 export const useCounter = ({
 	initialCount = 0,
-	min = -Number.NEGATIVE_INFINITY,
+	min = Number.NEGATIVE_INFINITY,
 	max = Number.POSITIVE_INFINITY,
 }: UseCounterParams) => {
 	const [count, dispatch] = useReducer(reducer, initialCount);
